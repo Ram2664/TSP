@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h2>RSV</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Track Consignment</a></li>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Bookings</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Login Form Section -->
+        <main class="main-content">
+            <section class="login-signup-container">
+                <h2>Login to Your Account</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" name="username" placeholder="Username/Email" required>
+                    <input type="password" id="password" name="password" placeholder="Password" required>
+                    <button type="submit" class="btn">Login</button>
+                </form>
+                <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", (event) => {
+            event.preventDefault(); // Prevent form submission
+
+            // Destructure values from input fields
+            const { username, password } = event.target.elements;
+
+            // Redirect based on credentials
+            window.location.href = (username.value === "admin" && password.value === "admin") 
+                ? "admin.html" 
+                : "client.html";
+        });
+    </script>
+</body>
+</html>

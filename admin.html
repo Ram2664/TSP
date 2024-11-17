@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Leaflet CSS for map visualization -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <h2>RSV</h2>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="loadHome(); return false;">Home</a></li>
+                    <li><a href="#" onclick="loadSendConsignments(); return false;">Send Consignments</a></li>
+                    <li><a href="#" onclick="loadMyAccount(); return false;">My Account</a></li>
+                
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content" id="main-content">
+            <h2>Welcome to RSV Admin Dashboard</h2>
+            <section class="options">
+                <article class="option" onclick="loadSendConsignments()">
+                    <img src="/static/images/shipping.png" alt="Shipping" style="width: 100%; border-radius: 8px;">
+                    <h2>Shipping</h2>
+                    <p>Send your consignments and manage your shipments efficiently.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <!-- Leaflet JS for map interactions -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
